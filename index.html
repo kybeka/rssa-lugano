@@ -412,20 +412,57 @@
     /* ─── ABOUT ───────────────────────────────────────────────── */
     .about__layout {
       display: grid;
-      grid-template-columns: 220px 1fr;
+      grid-template-columns: 250px 1fr;
       gap: clamp(var(--sp-7), 6vw, var(--sp-10));
       align-items: start;
     }
+    .about__sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-7);
+    }
+    /* Pull quote — compact, sits above the stats */
+    .about__pull {
+      border-top: 2px solid var(--c-accent);
+      padding-block-start: var(--sp-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+    .about__pull-text {
+      font-family: var(--f-body);
+      font-size: var(--t-xs);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--c-text-2);
+    }
+    .about__pull-attr {
+      font-family: var(--f-display);
+      font-size: var(--t-2xs);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--c-text-3);
+      line-height: 1.6;
+    }
+    .about__pull-attr strong {
+      font-weight: 600;
+      color: var(--c-text-2);
+    }
+    /* Stat numbers — bold typographic column */
     .about__stats {
       display: flex;
       flex-direction: column;
       gap: 0;
     }
     .about__stat {
-      padding-block: var(--sp-6);
+      padding-block: var(--sp-5);
       border-bottom: 1px solid var(--c-border);
     }
-    .about__stat:first-child { padding-block-start: 0; }
+    .about__stat:first-child {
+      border-top: 1px solid var(--c-border);
+      padding-block-start: var(--sp-5);
+    }
     .about__stat:last-child { border-bottom: none; padding-block-end: 0; }
     .about__stat-val {
       font-family: var(--f-display);
@@ -489,22 +526,15 @@
       line-height: 1.6;
       color: var(--c-text-2);
     }
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .about__layout { grid-template-columns: 1fr; }
-      .about__stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--c-border);
-      }
-      .about__stat {
-        background: var(--c-bg);
-        border: none;
-        padding: var(--sp-5);
-      }
+      .about__sidebar { flex-direction: row; gap: var(--sp-8); align-items: flex-start; }
+      .about__pull { flex: 1; }
+      .about__stats { flex: 0 0 auto; }
     }
-    @media (max-width: 580px) {
-      .about__stats { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 640px) {
+      .about__sidebar { flex-direction: column; }
+      .about__stats { width: 100%; }
       .about__pillars { grid-template-columns: 1fr; }
     }
 
@@ -1009,18 +1039,30 @@
           <h2 class="sec-title" id="about-hed">Who we are</h2>
         </header>
         <div class="about__layout">
-          <div class="about__stats" role="list" aria-label="Key facts">
-            <div class="about__stat reveal" data-delay="1" role="listitem">
-              <div class="about__stat-val">2026</div>
-              <div class="about__stat-lbl">Founded</div>
-            </div>
-            <div class="about__stat reveal" data-delay="2" role="listitem">
-              <div class="about__stat-val">USI</div>
-              <div class="about__stat-lbl">University</div>
-            </div>
-            <div class="about__stat reveal" data-delay="3" role="listitem">
-              <div class="about__stat-val">All</div>
-              <div class="about__stat-lbl">Are welcome</div>
+          <div class="about__sidebar reveal" data-delay="1">
+            <blockquote class="about__pull">
+              <p class="about__pull-text">
+                "I founded RSSA because I wanted a place where being Russian-speaking
+                felt like a connection, not an explanation."
+              </p>
+              <footer class="about__pull-attr">
+                <strong>Katherine Lerner-Teves</strong><br>
+                President &amp; Founder
+              </footer>
+            </blockquote>
+            <div class="about__stats" role="list" aria-label="Key facts">
+              <div class="about__stat" role="listitem">
+                <div class="about__stat-val">2026</div>
+                <div class="about__stat-lbl">Founded</div>
+              </div>
+              <div class="about__stat" role="listitem">
+                <div class="about__stat-val">USI</div>
+                <div class="about__stat-lbl">University</div>
+              </div>
+              <div class="about__stat" role="listitem">
+                <div class="about__stat-val">All</div>
+                <div class="about__stat-lbl">Are welcome</div>
+              </div>
             </div>
           </div>
           <div class="about__prose">
