@@ -2,7 +2,7 @@
 
 Website for the **Russian Speaking Student Association** at the Università della Svizzera italiana (USI), Lugano, Switzerland.
 
-**Live site:** [rssa-lugano.github.io](https://rssa-lugano.github.io) *(update once deployed)*
+**Live site:** [kybeka.github.io/rssa-lugano](https://kybeka.github.io/rssa-lugano/)
 
 ---
 
@@ -64,7 +64,7 @@ python3 -m http.server
 1. Go to **Settings → Pages**
 2. Set source to **Deploy from a branch**
 3. Select `main` branch, `/ (root)` folder
-4. Save — the site will be live at `https://<username>.github.io/rssa-lugano`
+4. Save — the site is live at `https://kybeka.github.io/rssa-lugano/`
 
 ### Netlify (free)
 
