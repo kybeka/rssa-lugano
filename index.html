@@ -412,68 +412,37 @@
     /* ─── ABOUT ───────────────────────────────────────────────── */
     .about__layout {
       display: grid;
-      grid-template-columns: 240px 1fr;
+      grid-template-columns: 220px 1fr;
       gap: clamp(var(--sp-7), 6vw, var(--sp-10));
       align-items: start;
     }
-    .about__sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-7);
-    }
-    .about__pull {
-      border-top: 2px solid var(--c-accent);
-      padding-block-start: var(--sp-5);
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-4);
-    }
-    .about__pull-text {
-      font-family: var(--f-body);
-      font-size: var(--t-sm);
-      font-style: italic;
-      font-weight: 300;
-      line-height: 1.7;
-      color: var(--c-text-2);
-    }
-    .about__pull-attr {
-      font-family: var(--f-display);
-      font-size: var(--t-2xs);
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      color: var(--c-text-3);
-      line-height: 1.6;
-    }
-    .about__pull-attr strong {
-      font-weight: 600;
-      color: var(--c-text-2);
-    }
-    .about__facts {
+    .about__stats {
       display: flex;
       flex-direction: column;
       gap: 0;
     }
-    .about__fact {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--sp-3);
-      padding-block: var(--sp-3);
+    .about__stat {
+      padding-block: var(--sp-6);
       border-bottom: 1px solid var(--c-border);
     }
-    .about__fact:first-child { border-top: 1px solid var(--c-border); }
-    .about__fact dt {
+    .about__stat:first-child { padding-block-start: 0; }
+    .about__stat:last-child { border-bottom: none; padding-block-end: 0; }
+    .about__stat-val {
+      font-family: var(--f-display);
+      font-size: var(--t-3xl);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--c-accent);
+    }
+    .about__stat-lbl {
       font-family: var(--f-display);
       font-size: var(--t-2xs);
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
       color: var(--c-text-3);
-    }
-    .about__fact dd {
-      font-family: var(--f-display);
-      font-size: var(--t-xs);
-      font-weight: 500;
-      color: var(--c-text);
+      margin-block-start: var(--sp-2);
     }
     .about__prose {
       display: flex;
@@ -522,13 +491,20 @@
     }
     @media (max-width: 900px) {
       .about__layout { grid-template-columns: 1fr; }
-      .about__sidebar { flex-direction: row; gap: var(--sp-7); }
-      .about__pull { flex: 1; }
-      .about__facts { flex: 0 0 200px; }
+      .about__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--c-border);
+      }
+      .about__stat {
+        background: var(--c-bg);
+        border: none;
+        padding: var(--sp-5);
+      }
     }
-    @media (max-width: 640px) {
-      .about__sidebar { flex-direction: column; }
-      .about__facts { flex: unset; }
+    @media (max-width: 580px) {
+      .about__stats { grid-template-columns: 1fr 1fr; }
       .about__pillars { grid-template-columns: 1fr; }
     }
 
@@ -669,67 +645,67 @@
     }
 
     /* ─── TEAM ────────────────────────────────────────────────── */
-    /* Team — typographic roster (commit fully, no half-finished placeholders) */
-    .team__roster {
+    .team__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--c-border);
+    }
+    .team-card {
       display: flex;
       flex-direction: column;
+      background: var(--c-bg);
+      overflow: hidden;
+      transition: background-color var(--t-fast);
     }
-    .team-member {
-      display: grid;
-      grid-template-columns: 48px 1fr 2fr;
-      gap: var(--sp-6);
-      align-items: baseline;
-      padding-block: var(--sp-7);
-      padding-inline: var(--sp-2);
-      border-bottom: 1px solid var(--c-border);
-      transition:
-        background-color var(--t-fast) var(--ease-out),
-        padding-inline    var(--t-fast) var(--ease-out);
+    .team-card:hover { background: var(--c-accent-lt); }
+    .team-card__photo {
+      aspect-ratio: 4 / 5;
+      background: var(--c-bg-muted);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .team-member:first-child { border-top: 1px solid var(--c-border); }
-    .team-member:hover {
-      background: var(--c-accent-lt);
-      padding-inline: var(--sp-5);
-    }
-    .team-member__index {
+    .team-card__initials {
       font-family: var(--f-display);
-      font-size: var(--t-xs);
-      font-weight: 500;
-      letter-spacing: 0.10em;
-      color: var(--c-accent);
-      padding-inline-start: var(--sp-2);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--c-border-2);
+      user-select: none;
     }
-    .team-member__identity { display: flex; flex-direction: column; gap: 4px; }
-    .team-member__name {
-      font-family: var(--f-display);
-      font-size: var(--t-xl);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      color: var(--c-text);
-    }
-    .team-member__role {
+    .team-card__body { padding: var(--sp-5) var(--sp-5) var(--sp-7); }
+    .team-card__role {
       font-family: var(--f-display);
       font-size: var(--t-2xs);
       font-weight: 700;
       letter-spacing: 0.10em;
       text-transform: uppercase;
       color: var(--c-accent);
+      margin-block-end: var(--sp-2);
     }
-    .team-member__bio {
+    .team-card__name {
+      font-family: var(--f-display);
+      font-size: var(--t-lg);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--c-text);
+      margin-block-end: var(--sp-4);
+    }
+    .team-card__bio {
       font-family: var(--f-body);
       font-size: var(--t-sm);
-      font-style: italic;
       font-weight: 300;
-      line-height: 1.7;
+      line-height: 1.65;
       color: var(--c-text-2);
     }
-    @media (max-width: 720px) {
-      .team-member {
-        grid-template-columns: 1fr;
-        gap: var(--sp-3);
-      }
-      .team-member__index { display: none; }
+    @media (max-width: 860px) {
+      .team__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .team__grid { grid-template-columns: 1fr; }
     }
 
     /* ─── CONNECT ─────────────────────────────────────────────── */
@@ -1033,32 +1009,20 @@
           <h2 class="sec-title" id="about-hed">Who we are</h2>
         </header>
         <div class="about__layout">
-          <aside class="about__sidebar reveal" data-delay="1">
-            <blockquote class="about__pull">
-              <p class="about__pull-text">
-                "I founded RSSA because I wanted a place where being Russian-speaking
-                felt like a connection, not an explanation."
-              </p>
-              <footer class="about__pull-attr">
-                <strong>Katherine Lerner-Teves</strong><br>
-                President &amp; Founder
-              </footer>
-            </blockquote>
-            <dl class="about__facts">
-              <div class="about__fact">
-                <dt>Founded</dt>
-                <dd>Spring 2026</dd>
-              </div>
-              <div class="about__fact">
-                <dt>University</dt>
-                <dd>USI Lugano</dd>
-              </div>
-              <div class="about__fact">
-                <dt>Membership</dt>
-                <dd>Open to all</dd>
-              </div>
-            </dl>
-          </aside>
+          <div class="about__stats" role="list" aria-label="Key facts">
+            <div class="about__stat reveal" data-delay="1" role="listitem">
+              <div class="about__stat-val">2026</div>
+              <div class="about__stat-lbl">Founded</div>
+            </div>
+            <div class="about__stat reveal" data-delay="2" role="listitem">
+              <div class="about__stat-val">USI</div>
+              <div class="about__stat-lbl">University</div>
+            </div>
+            <div class="about__stat reveal" data-delay="3" role="listitem">
+              <div class="about__stat-val">All</div>
+              <div class="about__stat-lbl">Are welcome</div>
+            </div>
+          </div>
           <div class="about__prose">
             <p class="about__lead reveal" data-delay="1">
               The Russian Speaking Student Association brings together students who share
@@ -1208,40 +1172,45 @@
           <span class="sec-num">03</span>
           <h2 class="sec-title" id="team-hed">The team</h2>
         </header>
-        <div class="team__roster" role="list">
-          <article class="team-member reveal" role="listitem">
-            <span class="team-member__index" aria-hidden="true">01</span>
-            <div class="team-member__identity">
-              <h3 class="team-member__name">Katherine Lerner-Teves</h3>
-              <p class="team-member__role">President · Founder</p>
+        <div class="team__grid">
+          <article class="team-card reveal">
+            <div class="team-card__photo" aria-hidden="true">
+              <span class="team-card__initials">KL</span>
             </div>
-            <p class="team-member__bio">
-              Finance Master's student at USI. Founded RSSA to create a home for
-              Russian-speaking students at one of Switzerland's most international
-              universities. Originally from the US, with Russian heritage.
-            </p>
+            <div class="team-card__body">
+              <p class="team-card__role">President · Founder</p>
+              <h3 class="team-card__name">Katherine<br>Lerner-Teves</h3>
+              <p class="team-card__bio">
+                Finance Master's student at USI. Founded RSSA to create a home for
+                Russian-speaking students at one of Switzerland's most international universities.
+              </p>
+            </div>
           </article>
-          <article class="team-member reveal" data-delay="1" role="listitem">
-            <span class="team-member__index" aria-hidden="true">02</span>
-            <div class="team-member__identity">
-              <h3 class="team-member__name">David Bocherov</h3>
-              <p class="team-member__role">Vice President</p>
+          <article class="team-card reveal" data-delay="1">
+            <div class="team-card__photo" aria-hidden="true">
+              <span class="team-card__initials">DB</span>
             </div>
-            <p class="team-member__bio">
-              Media Management Master's student, drama actor, and cinema enthusiast.
-              Leads cultural programming and creative direction for the association.
-            </p>
+            <div class="team-card__body">
+              <p class="team-card__role">Vice President</p>
+              <h3 class="team-card__name">David<br>Bocherov</h3>
+              <p class="team-card__bio">
+                Media Management Master's student, drama actor, and cinema enthusiast.
+                Leads cultural programming and creative direction for the association.
+              </p>
+            </div>
           </article>
-          <article class="team-member reveal" data-delay="2" role="listitem">
-            <span class="team-member__index" aria-hidden="true">03</span>
-            <div class="team-member__identity">
-              <h3 class="team-member__name">Aleksandr Volkov</h3>
-              <p class="team-member__role">Treasurer</p>
+          <article class="team-card reveal" data-delay="2">
+            <div class="team-card__photo" aria-hidden="true">
+              <span class="team-card__initials">AV</span>
             </div>
-            <p class="team-member__bio">
-              Fintech Master's student at USI. Manages the association's finances
-              with the precision you'd expect from someone studying the future of money.
-            </p>
+            <div class="team-card__body">
+              <p class="team-card__role">Treasurer</p>
+              <h3 class="team-card__name">Aleksandr<br>Volkov</h3>
+              <p class="team-card__bio">
+                Fintech Master's student at USI. Manages our finances with the precision
+                you'd expect from someone studying the future of money.
+              </p>
+            </div>
           </article>
         </div>
       </div>
