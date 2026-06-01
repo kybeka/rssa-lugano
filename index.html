@@ -113,9 +113,19 @@
     }
     .nav__logo {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: var(--sp-3);
       font-family: var(--f-display);
+    }
+    .nav__logo-icon {
+      color: var(--c-accent);
+      flex-shrink: 0;
+      display: block;
+    }
+    .nav__logo-text {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-3);
     }
     .nav__logo-mark {
       font-size: var(--t-md);
@@ -975,8 +985,15 @@
     <div class="container">
       <div class="nav__bar">
         <a href="#" class="nav__logo" aria-label="RSSA — Return to top">
-          <span class="nav__logo-mark">RSSA</span>
-          <span class="nav__logo-sub">Lugano</span>
+          <!-- Guillemet mark — two left-pointing chevrons, Russian typographic symbol for speech/language -->
+          <svg class="nav__logo-icon" width="14" height="20" viewBox="0 0 14 20" fill="none" aria-hidden="true">
+            <path d="M7 1 L1 10 L7 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 1 L7 10 L13 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="nav__logo-text">
+            <span class="nav__logo-mark">RSSA</span>
+            <span class="nav__logo-sub">Lugano</span>
+          </span>
         </a>
         <nav class="nav__links" aria-label="Primary">
           <a class="nav__link" href="#about">About</a>
