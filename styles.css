@@ -726,10 +726,10 @@ address { font-style: normal; }
 .latest { background: var(--c-bg-muted); }
 .latest .sec-hd { border-color: var(--c-border); }
 
-.latest__sources {
+.latest__controls {
   display: flex;
   align-items: center;
-  gap: var(--sp-3);
+  gap: var(--sp-5);
 }
 .latest__source-link {
   font-family: var(--f-display);
@@ -741,10 +741,34 @@ address { font-style: normal; }
   transition: color var(--t-fast) var(--ease-out);
 }
 .latest__source-link:hover { color: var(--c-accent); }
-.latest__source-sep {
-  color: var(--c-border-2);
-  font-size: var(--t-xs);
+
+.latest__sort {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  background: var(--c-border);
 }
+.sort-btn {
+  font-family: var(--f-display);
+  font-size: var(--t-2xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px var(--sp-3);
+  background: var(--c-bg-muted);
+  color: var(--c-text-3);
+  cursor: pointer;
+  border: none;
+  transition:
+    background-color var(--t-fast) var(--ease-out),
+    color            var(--t-fast) var(--ease-out);
+}
+.sort-btn:hover { background: var(--c-bg); color: var(--c-text); }
+.sort-btn--active {
+  background: var(--c-text);
+  color: var(--c-bg);
+}
+.sort-btn--active:hover { background: var(--c-accent); }
 
 /* Fallback text shown until Juicer loads / is configured */
 .latest__fallback {

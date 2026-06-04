@@ -1,11 +1,59 @@
-// ── JUICER: show fallback if feed not yet configured ──────
-const juicerFeed = document.querySelector('.juicer-feed');
+// ── JUICER: fallback + sort controls ──────────────────────
+const juicerFeed     = document.querySelector('.juicer-feed');
 const juicerFallback = document.getElementById('latestFallback');
+const sortBtns       = document.querySelectorAll('.sort-btn');
+
+// Show fallback if feed ID not yet configured
 if (juicerFeed && juicerFallback) {
   const feedId = juicerFeed.getAttribute('data-feed-id');
   if (!feedId || feedId === 'YOUR-FEED-ID') {
     juicerFallback.classList.add('latest__fallback--visible');
   }
+}
+
+// Sort rendered Juicer items by date
+function sortFeed(order) {
+  const list = document.querySelector('.juicer-feed ul');
+  if (!list) return;
+  const items = [...list.querySelectorAll('li.feed-item')];
+  if (items.length < 2) return;
+
+  items.sort((a, b) => {
+    const getTime = el => {
+      const dateEl = el.querySelector('.j-date');
+      if (!dateEl) return 0;
+      const str = dateEl.getAttribute('title') || dateEl.getAttribute('datetime') || '';
+      return new Date(str).getTime() || 0;
+    };
+    return order === 'oldest' ? getTime(a) - getTime(b) : getTime(b) - getTime(a);
+  });
+
+  items.forEach(item => list.appendChild(item));
+}
+
+// Wire sort buttons
+sortBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    sortBtns.forEach(b => {
+      b.classList.remove('sort-btn--active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('sort-btn--active');
+    btn.setAttribute('aria-pressed', 'true');
+    sortFeed(btn.dataset.sort);
+  });
+});
+
+// Wait for Juicer to render, then enable sorting
+if (juicerFeed) {
+  const observer = new MutationObserver(() => {
+    const list = juicerFeed.querySelector('ul');
+    if (list && list.querySelectorAll('li.feed-item').length > 0) {
+      observer.disconnect();
+      sortFeed('newest'); // default order
+    }
+  });
+  observer.observe(juicerFeed, { childList: true, subtree: true });
 }
 
 // ── NAV: scroll state ──────────────────────────────────────
