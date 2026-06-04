@@ -940,9 +940,7 @@ textarea.form-field { resize: vertical; min-height: 130px; }
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: var(--sp-8);
-  padding-block-end: var(--sp-8);
-  border-bottom: 1px solid var(--c-dark-border);
-  margin-block-end: var(--sp-6);
+  padding-block-end: var(--sp-7);
 }
 .footer__logo {
   font-family: var(--f-display);
@@ -985,7 +983,7 @@ textarea.form-field { resize: vertical; min-height: 130px; }
   align-items: center;
   gap: var(--sp-5);
   flex-wrap: wrap;
-  padding-block-start: var(--sp-4);
+  padding-block-start: var(--sp-5);
   border-top: 1px solid var(--c-dark-border);
 }
 .footer__copy {
