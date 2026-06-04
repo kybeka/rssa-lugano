@@ -991,6 +991,16 @@ textarea.form-field { resize: vertical; min-height: 130px; }
   font-size: var(--t-2xs);
   color: var(--c-text-3);
 }
+.footer__disclaimer {
+  font-family: var(--f-display);
+  font-size: var(--t-2xs);
+  color: oklch(38% 0.008 265);
+  line-height: 1.6;
+  padding-block-start: var(--sp-5);
+  border-top: 1px solid var(--c-dark-border);
+  margin-block-start: var(--sp-4);
+  max-width: 72ch;
+}
 .footer__address {
   font-family: var(--f-display);
   font-size: var(--t-2xs);
