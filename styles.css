@@ -1000,6 +1000,7 @@ textarea.form-field { resize: vertical; min-height: 130px; }
   color: oklch(42% 0.008 265);
   line-height: 1.6;
   margin-block-start: var(--sp-4);
+  max-width: 38ch;
 }
 .footer__address {
   font-family: var(--f-display);
