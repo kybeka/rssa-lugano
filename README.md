@@ -25,10 +25,11 @@ A complete redesign of the original Wix site, built as a single-file static webs
 | | |
 |---|---|
 | HTML | Semantic, accessible markup |
-| CSS | Modern CSS — OKLCH colors, `clamp()` fluid type, container queries, CSS custom properties |
+| CSS | Modern CSS — OKLCH colors, `clamp()` fluid type, CSS custom properties |
 | JavaScript | Vanilla JS — scroll reveal, nav state, form handling |
 | Fonts | [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque) + [Spectral](https://fonts.google.com/specimen/Spectral) via Google Fonts |
-| Forms | [Formspree](https://formspree.io) (free tier) |
+| Social feed | [Juicer.io](https://juicer.io) embed (free tier, Telegram via rss.app) |
+| Contact form | Pure `mailto:` — no third-party service required |
 
 ### Design principles
 
@@ -78,29 +79,11 @@ npx vercel
 
 ---
 
-## Wiring the contact form
+## Contact form
 
-The contact form uses [Formspree](https://formspree.io). To activate it:
+The contact form uses a pure `mailto:` approach — no backend or third-party service required. When submitted, it opens the visitor's email client pre-filled with their name, reply-to address, and message. They send it from their own client directly to RSSA@usi.ch.
 
-1. Create a free account at formspree.io
-2. Create a new form — copy the form ID from the endpoint URL
-3. In `index.html`, find the `<form>` tag and replace `YOUR_FORM_ID`:
-
-```html
-action="https://formspree.io/f/YOUR_FORM_ID"
-```
-
-Until this is configured, the form gracefully falls back to opening a pre-filled `mailto:RSSA@usi.ch` link.
-
----
-
-## Photo direction
-
-When team photos are available, replace the typographic roster in the `#team` section with portrait cards. Recommended photography style:
-
-> Natural window light, USI campus setting, warm film aesthetic, shallow depth of field, 35mm equivalent, candid rather than posed.
-
-AI generation prompt: *"Graduate student portrait, natural window light, Lugano university campus, warm film photography, shallow depth of field, 35mm, thoughtful expression, no studio background"*
+If no email client is configured on the visitor's device, the form displays an error message with the direct email address.
 
 ---
 
