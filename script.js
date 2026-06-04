@@ -69,53 +69,31 @@ const form   = document.getElementById('contactForm');
 const submit = document.getElementById('formSubmit');
 const status = document.getElementById('formStatus');
 
-const FORM_WIRED = !form.action.includes('YOUR_FORM_ID');
-
-form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
+  if (!form.checkValidity()) { form.reportValidity(); return; }
 
-  if (!FORM_WIRED) {
-    const name    = form.firstName.value + ' ' + form.lastName.value;
-    const message = form.message.value;
-    const subject = encodeURIComponent('Hello from the RSSA website');
-    const body    = encodeURIComponent(`From: ${name}\n\n${message}`);
-    window.location.href = `mailto:RSSA@usi.ch?subject=${subject}&body=${body}`;
-    return;
-  }
+  const name    = `${form.firstName.value.trim()} ${form.lastName.value.trim()}`;
+  const replyTo = form.email.value.trim();
+  const message = form.message.value.trim();
+  const subject = encodeURIComponent('Message via RSSA website');
+  const body    = encodeURIComponent(`From: ${name}\nReply to: ${replyTo}\n\n${message}`);
 
-  submit.disabled = true;
-  submit.textContent = 'Sending…';
-  status.textContent = '';
-  status.className = 'form-status';
+  let launched = false;
+  const onBlur = () => { launched = true; };
+  window.addEventListener('blur', onBlur, { once: true });
 
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { Accept: 'application/json' },
-    });
+  window.location.href = `mailto:RSSA@usi.ch?subject=${subject}&body=${body}`;
 
-    if (res.ok) {
-      submit.textContent = 'Send message';
-      submit.disabled = false;
-      status.textContent = 'Message sent. We\'ll be in touch soon.';
+  setTimeout(() => {
+    window.removeEventListener('blur', onBlur);
+    if (launched) {
+      status.textContent = 'Your email client should have opened — just hit send!';
       status.className = 'form-status success';
-      form.reset();
-      setTimeout(() => {
-        status.textContent = '';
-        status.className = 'form-status';
-      }, 8000);
     } else {
-      throw new Error('Server error');
+      status.textContent = 'No email client detected. Please email us directly at RSSA@usi.ch';
+      status.className = 'form-status error';
     }
-  } catch {
-    submit.textContent = 'Send message';
-    submit.disabled = false;
-    status.textContent = 'Something went wrong. Email us directly at RSSA@usi.ch';
-    status.className = 'form-status error';
-  }
+    setTimeout(() => { status.textContent = ''; status.className = 'form-status'; }, 8000);
+  }, 600);
 });
