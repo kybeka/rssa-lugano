@@ -927,6 +927,11 @@ textarea.form-field { resize: vertical; min-height: 130px; }
   .footer__address { text-align: left; }
 }
 
+/* ─── JUICER: suppress injected body-level elements ──────── */
+/* Juicer appends a keyword/content-signature node after <footer>;
+   this keeps it from rendering visibly */
+footer ~ * { display: none !important; }
+
 /* ─── SCROLL REVEAL ───────────────────────────────────────── */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
