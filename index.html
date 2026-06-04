@@ -204,9 +204,9 @@
         </a>
         <nav class="nav__links" aria-label="Primary">
           <a class="nav__link" href="#about">About</a>
+          <a class="nav__link" href="#latest">Latest</a>
           <a class="nav__link" href="#events">Events</a>
           <a class="nav__link" href="#team">Team</a>
-          <a class="nav__link" href="#latest">Latest</a>
           <a class="nav__link" href="#connect">Contact</a>
           <a class="nav__join" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Join Us</a>
         </nav>
@@ -217,9 +217,9 @@
     </div>
     <nav class="nav__drawer" id="navDrawer" aria-label="Mobile navigation">
       <a class="nav__drawer-link" href="#about">About</a>
+      <a class="nav__drawer-link" href="#latest">Latest</a>
       <a class="nav__drawer-link" href="#events">Events</a>
       <a class="nav__drawer-link" href="#team">Team</a>
-      <a class="nav__drawer-link" href="#latest">Latest</a>
       <a class="nav__drawer-link" href="#connect">Contact</a>
       <a class="nav__drawer-link" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Join Us →</a>
     </nav>
@@ -336,16 +336,53 @@
       </div>
     </section>
 
+    <!-- ─── LATEST ───────────────────────────────────────────── -->
+    <section class="latest section-pad" id="latest" aria-labelledby="latest-hed">
+      <div class="container">
+        <header class="sec-hd reveal">
+          <span class="sec-num">02</span>
+          <h2 class="sec-title" id="latest-hed">Latest</h2>
+          <div class="latest__sources" aria-label="Social channels">
+            <a class="latest__source-link" href="https://www.instagram.com/rssa_lugano" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <span class="latest__source-sep" aria-hidden="true">·</span>
+            <a class="latest__source-link" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
+          </div>
+        </header>
+
+        <!--
+          ── JUICER SETUP ────────────────────────────────────────────
+          1. Create a free account at juicer.io
+          2. Add source: Instagram  → connect @rssa_lugano
+          3. Add source: Telegram   → connect @RSSA_Lugano
+          4. Your feed name appears in the dashboard URL:
+             juicer.io/feeds/YOUR-FEED-ID/edit
+          5. Replace YOUR-FEED-ID below with that name, then commit.
+          ────────────────────────────────────────────────────────────
+        -->
+        <div class="juicer-feed" data-feed-id="YOUR-FEED-ID" data-per="9" data-truncate="120" data-overlay="false"></div>
+
+        <p class="latest__fallback" id="latestFallback">
+          Follow us on
+          <a href="https://www.instagram.com/rssa_lugano" target="_blank" rel="noopener noreferrer">Instagram</a>
+          and
+          <a href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
+          for the latest updates, including upcoming events.
+        </p>
+      </div>
+    </section>
+
     <!-- ─── EVENTS ────────────────────────────────────────────── -->
     <section class="events section-pad" id="events" aria-labelledby="events-hed">
       <div class="container">
         <header class="sec-hd sec-hd--dark reveal">
-          <span class="sec-num">02</span>
+          <span class="sec-num">03</span>
           <h2 class="sec-title" id="events-hed">Spring 2026</h2>
-          <a class="sec-more sec-more--dark" href="#connect" aria-label="Subscribe for Fall 2026 updates">Fall 2026 →</a>
+          <a class="sec-more sec-more--dark" href="#latest" aria-label="See live updates above">Live feed ↑</a>
         </header>
-        <p class="events__note reveal" aria-label="Season note">
-          Spring semester has concluded. Join our Telegram for Fall 2026 announcements.
+        <p class="events__note reveal">
+          Past semester programme. For upcoming events, follow us on
+          <a href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
+          or see the feed above.
         </p>
         <ol class="event-list events__list--past" aria-label="Spring 2026 events (concluded)">
           <li class="event-item reveal">
@@ -433,7 +470,7 @@
     <section class="team section-pad" id="team" aria-labelledby="team-hed">
       <div class="container">
         <header class="sec-hd reveal">
-          <span class="sec-num">03</span>
+          <span class="sec-num">04</span>
           <h2 class="sec-title" id="team-hed">The team</h2>
         </header>
         <div class="team__grid">
@@ -486,41 +523,6 @@
             </div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- ─── LATEST ───────────────────────────────────────────── -->
-    <section class="latest section-pad" id="latest" aria-labelledby="latest-hed">
-      <div class="container">
-        <header class="sec-hd reveal">
-          <span class="sec-num">04</span>
-          <h2 class="sec-title" id="latest-hed">Latest</h2>
-          <div class="latest__sources" aria-label="Social channels">
-            <a class="latest__source-link" href="https://www.instagram.com/rssa_lugano" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <span class="latest__source-sep" aria-hidden="true">·</span>
-            <a class="latest__source-link" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
-          </div>
-        </header>
-
-        <!--
-          ── JUICER SETUP ────────────────────────────────────────────
-          1. Create a free account at juicer.io
-          2. Add source: Instagram  → connect @rssa_lugano
-          3. Add source: Telegram   → connect @RSSA_Lugano
-          4. Your feed name appears in the dashboard URL:
-             juicer.io/feeds/YOUR-FEED-ID/edit
-          5. Replace YOUR-FEED-ID below with that name, then commit.
-          ────────────────────────────────────────────────────────────
-        -->
-        <div class="juicer-feed" data-feed-id="YOUR-FEED-ID" data-per="9" data-truncate="120" data-overlay="false"></div>
-
-        <p class="latest__fallback" id="latestFallback">
-          Follow us on
-          <a href="https://www.instagram.com/rssa_lugano" target="_blank" rel="noopener noreferrer">Instagram</a>
-          and
-          <a href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
-          for the latest updates.
-        </p>
       </div>
     </section>
 
@@ -633,9 +635,9 @@
           <p class="footer__col-label">Navigate</p>
           <nav class="footer__nav" aria-label="Footer navigation">
             <a class="footer__nav-link" href="#about">About</a>
+            <a class="footer__nav-link" href="#latest">Latest</a>
             <a class="footer__nav-link" href="#events">Events</a>
             <a class="footer__nav-link" href="#team">Team</a>
-            <a class="footer__nav-link" href="#latest">Latest</a>
             <a class="footer__nav-link" href="#connect">Contact</a>
           </nav>
         </div>
