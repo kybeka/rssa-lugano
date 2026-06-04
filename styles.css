@@ -993,19 +993,13 @@ textarea.form-field { resize: vertical; min-height: 130px; }
   font-size: var(--t-2xs);
   color: var(--c-text-3);
 }
-.footer__disclaimer-row {
-  border-top: 1px solid var(--c-dark-border);
-  padding-block: var(--sp-5);
-  margin-block-end: var(--sp-4);
-}
 .footer__disclaimer {
-  font-family: var(--f-body);
-  font-size: var(--t-xs);
-  font-style: italic;
-  font-weight: 300;
-  color: var(--c-dark-text);
-  line-height: 1.65;
-  max-width: 68ch;
+  font-family: var(--f-display);
+  font-size: var(--t-2xs);
+  font-weight: 400;
+  color: oklch(42% 0.008 265);
+  line-height: 1.6;
+  margin-block-start: var(--sp-4);
 }
 .footer__address {
   font-family: var(--f-display);
