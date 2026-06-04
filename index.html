@@ -82,110 +82,6 @@
         "name": "RSSA Lugano",
         "publisher": { "@id": "https://rssa.usi.ch/#organization" }
       },
-      {
-        "@type": "Event",
-        "name": "RSSA Welcome Meeting",
-        "startDate": "2026-03-03T17:30",
-        "endDate": "2026-03-03T19:00",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-          "@type": "Place",
-          "name": "Red Building, Room A22",
-          "address": { "@id": "https://rssa.usi.ch/#organization" }
-        },
-        "organizer": { "@id": "https://rssa.usi.ch/#organization" },
-        "description": "RSSA's semesterly welcome meeting — meet the team and other Russian-speaking students at USI.",
-        "isAccessibleForFree": true
-      },
-      {
-        "@type": "Event",
-        "name": "RSSA Movie Night",
-        "startDate": "2026-03-17T19:00",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-          "@type": "Place",
-          "name": "Red Building, Room A22",
-          "address": { "@id": "https://rssa.usi.ch/#organization" }
-        },
-        "organizer": { "@id": "https://rssa.usi.ch/#organization" },
-        "isAccessibleForFree": true
-      },
-      {
-        "@type": "Event",
-        "name": "RSSA Tea Party",
-        "startDate": "2026-04-01T17:30",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-          "@type": "Place",
-          "name": "Main Building, Room 129",
-          "address": { "@id": "https://rssa.usi.ch/#organization" }
-        },
-        "organizer": { "@id": "https://rssa.usi.ch/#organization" },
-        "isAccessibleForFree": true
-      },
-      {
-        "@type": "Event",
-        "name": "RSSA Russian Language Karaoke",
-        "startDate": "2026-04-21T19:30",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-          "@type": "Place",
-          "name": "Red Building, Room A21",
-          "address": { "@id": "https://rssa.usi.ch/#organization" }
-        },
-        "organizer": { "@id": "https://rssa.usi.ch/#organization" },
-        "isAccessibleForFree": true
-      },
-      {
-        "@type": "Event",
-        "name": "RSSA Game Night",
-        "startDate": "2026-04-28T17:30",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-          "@type": "Place",
-          "name": "Red Building, Room A31",
-          "address": { "@id": "https://rssa.usi.ch/#organization" }
-        },
-        "organizer": { "@id": "https://rssa.usi.ch/#organization" },
-        "isAccessibleForFree": true
-      },
-      {
-        "@type": "Event",
-        "name": "RSSA Matryoshka Doll Decorating",
-        "startDate": "2026-05-19T17:30",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-          "@type": "Place",
-          "name": "Red Building, Room A31",
-          "address": { "@id": "https://rssa.usi.ch/#organization" }
-        },
-        "organizer": { "@id": "https://rssa.usi.ch/#organization" },
-        "isAccessibleForFree": true
-      },
-      {
-        "@type": "Event",
-        "name": "RSSA End of Semester Picnic",
-        "startDate": "2026-05-28T17:30",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-          "@type": "Place",
-          "name": "Parco Ciani",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lugano",
-            "addressCountry": "CH"
-          }
-        },
-        "organizer": { "@id": "https://rssa.usi.ch/#organization" },
-        "isAccessibleForFree": true
-      }
     ]
   }
   </script>
@@ -205,7 +101,6 @@
         <nav class="nav__links" aria-label="Primary">
           <a class="nav__link" href="#about">About</a>
           <a class="nav__link" href="#latest">Latest</a>
-          <a class="nav__link" href="#events">Programme</a>
           <a class="nav__link" href="#team">Team</a>
           <a class="nav__link" href="#connect">Contact</a>
           <a class="nav__join" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Join Us</a>
@@ -218,7 +113,6 @@
     <nav class="nav__drawer" id="navDrawer" aria-label="Mobile navigation">
       <a class="nav__drawer-link" href="#about">About</a>
       <a class="nav__drawer-link" href="#latest">Latest</a>
-      <a class="nav__drawer-link" href="#events">Programme</a>
       <a class="nav__drawer-link" href="#team">Team</a>
       <a class="nav__drawer-link" href="#connect">Contact</a>
       <a class="nav__drawer-link" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Join Us →</a>
@@ -342,13 +236,7 @@
         <header class="sec-hd reveal">
           <span class="sec-num">02</span>
           <h2 class="sec-title" id="latest-hed">Latest</h2>
-          <div class="latest__controls">
-            <a class="latest__source-link" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
-            <div class="latest__sort" role="group" aria-label="Sort order">
-              <button class="sort-btn sort-btn--active" data-sort="newest" aria-pressed="true">Newest</button>
-              <button class="sort-btn" data-sort="oldest" aria-pressed="false">Oldest</button>
-            </div>
-          </div>
+          <a class="sec-more" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
         </header>
 
         <!--
@@ -371,115 +259,23 @@
       </div>
     </section>
 
-    <!-- ─── EVENTS ────────────────────────────────────────────── -->
-    <section class="events section-pad" id="events" aria-labelledby="events-hed">
-      <div class="container">
-        <header class="sec-hd sec-hd--dark reveal">
-          <span class="sec-num">03</span>
-          <h2 class="sec-title" id="events-hed">Programme</h2>
-          <a class="sec-more sec-more--dark" href="#latest" aria-label="See live updates above">Live feed ↑</a>
-        </header>
-        <p class="events__note reveal">
-          Past semester programme. For upcoming events, follow us on
-          <a href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
-          or see the feed above.
-        </p>
-        <ol class="event-list events__list--past" aria-label="Spring 2026 events (concluded)">
-          <li class="event-item reveal">
-            <div class="event-date">
-              <span class="event-day">03</span>
-              <span class="event-month">Mar</span>
-            </div>
-            <div class="event-info">
-              <h3 class="event-name">Welcome Meeting</h3>
-              <p class="event-meta">5:30 PM · Red Building, Room A22</p>
-            </div>
-            <span class="event-cat">Community</span>
-          </li>
-          <li class="event-item reveal" data-delay="1">
-            <div class="event-date">
-              <span class="event-day">17</span>
-              <span class="event-month">Mar</span>
-            </div>
-            <div class="event-info">
-              <h3 class="event-name">Movie Night</h3>
-              <p class="event-meta">7:00 PM · Red Building, Room A22</p>
-            </div>
-            <span class="event-cat">Cultural</span>
-          </li>
-          <li class="event-item reveal" data-delay="2">
-            <div class="event-date">
-              <span class="event-day">01</span>
-              <span class="event-month">Apr</span>
-            </div>
-            <div class="event-info">
-              <h3 class="event-name">Tea Party</h3>
-              <p class="event-meta">5:30 PM · Main Building, Room 129</p>
-            </div>
-            <span class="event-cat">Social</span>
-          </li>
-          <li class="event-item reveal" data-delay="3">
-            <div class="event-date">
-              <span class="event-day">21</span>
-              <span class="event-month">Apr</span>
-            </div>
-            <div class="event-info">
-              <h3 class="event-name">Russian Language Karaoke</h3>
-              <p class="event-meta">7:30 PM · Red Building, Room A21</p>
-            </div>
-            <span class="event-cat">Cultural</span>
-          </li>
-          <li class="event-item reveal" data-delay="4">
-            <div class="event-date">
-              <span class="event-day">28</span>
-              <span class="event-month">Apr</span>
-            </div>
-            <div class="event-info">
-              <h3 class="event-name">Game Night</h3>
-              <p class="event-meta">5:30 PM · Red Building, Room A31</p>
-            </div>
-            <span class="event-cat">Social</span>
-          </li>
-          <li class="event-item reveal" data-delay="5">
-            <div class="event-date">
-              <span class="event-day">19</span>
-              <span class="event-month">May</span>
-            </div>
-            <div class="event-info">
-              <h3 class="event-name">Matryoshka Doll Decorating</h3>
-              <p class="event-meta">5:30 PM · Red Building, Room A31</p>
-            </div>
-            <span class="event-cat">Cultural</span>
-          </li>
-          <li class="event-item reveal" data-delay="6">
-            <div class="event-date">
-              <span class="event-day">28</span>
-              <span class="event-month">May</span>
-            </div>
-            <div class="event-info">
-              <h3 class="event-name">End of Semester Picnic</h3>
-              <p class="event-meta">5:30 PM · Parco Ciani, Lakeside</p>
-            </div>
-            <span class="event-cat">Social</span>
-          </li>
-        </ol>
-      </div>
-    </section>
-
     <!-- ─── TEAM ──────────────────────────────────────────────── -->
     <section class="team section-pad" id="team" aria-labelledby="team-hed">
       <div class="container">
         <header class="sec-hd reveal">
-          <span class="sec-num">04</span>
+          <span class="sec-num">03</span>
           <h2 class="sec-title" id="team-hed">The team</h2>
         </header>
         <div class="team__grid">
           <article class="team-card reveal">
             <div class="team-card__photo">
-              <img src="images/katherine.jpg"
-                   alt="Katherine Lerner-Teves, President and Founder of RSSA Lugano"
-                   width="900" height="1124"
-                   loading="lazy">
+              <picture>
+                <source srcset="images/katherine.avif" type="image/avif">
+                <img src="images/katherine.jpg"
+                     alt="Katherine Lerner-Teves, President and Founder of RSSA Lugano"
+                     width="806" height="668"
+                     loading="lazy">
+              </picture>
             </div>
             <div class="team-card__body">
               <p class="team-card__role">President · Founder</p>
@@ -492,10 +288,13 @@
           </article>
           <article class="team-card reveal" data-delay="1">
             <div class="team-card__photo">
-              <img src="images/david.jpg"
-                   alt="David Bocherov, Vice President of RSSA Lugano"
-                   width="900" height="1124"
-                   loading="lazy">
+              <picture>
+                <source srcset="images/david.avif" type="image/avif">
+                <img src="images/david.jpg"
+                     alt="David Bocherov, Vice President of RSSA Lugano"
+                     width="636" height="527"
+                     loading="lazy">
+              </picture>
             </div>
             <div class="team-card__body">
               <p class="team-card__role">Vice President</p>
@@ -508,10 +307,13 @@
           </article>
           <article class="team-card reveal" data-delay="2">
             <div class="team-card__photo">
-              <img src="images/aleksandr.jpg"
-                   alt="Aleksandr Volkov, Treasurer of RSSA Lugano"
-                   width="900" height="1124"
-                   loading="lazy">
+              <picture>
+                <source srcset="images/aleksandr.avif" type="image/avif">
+                <img src="images/aleksandr.jpg"
+                     alt="Aleksandr Volkov, Treasurer of RSSA Lugano"
+                     width="806" height="668"
+                     loading="lazy">
+              </picture>
             </div>
             <div class="team-card__body">
               <p class="team-card__role">Treasurer</p>
@@ -530,7 +332,7 @@
     <section class="connect section-pad" id="connect" aria-labelledby="connect-hed">
       <div class="container">
         <header class="sec-hd reveal">
-          <span class="sec-num">05</span>
+          <span class="sec-num">04</span>
           <h2 class="sec-title" id="connect-hed">Join the community</h2>
         </header>
         <div class="connect__layout">
@@ -562,16 +364,6 @@
                 </div>
                 <span class="channel__arr" aria-hidden="true">→</span>
               </a>
-              <a class="channel" href="https://chat.whatsapp.com/FQS7h8Q3d3uF8TX6wSkyKM" target="_blank" rel="noopener noreferrer" aria-label="Join our WhatsApp group">
-                <span class="channel__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                </span>
-                <div class="channel__info">
-                  <p class="channel__name">WhatsApp</p>
-                  <p class="channel__handle">Join the group chat</p>
-                </div>
-                <span class="channel__arr" aria-hidden="true">→</span>
-              </a>
               <a class="channel" href="mailto:RSSA@usi.ch" aria-label="Email us at RSSA@usi.ch">
                 <span class="channel__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -579,6 +371,19 @@
                 <div class="channel__info">
                   <p class="channel__name">Email</p>
                   <p class="channel__handle">RSSA@usi.ch</p>
+                </div>
+                <span class="channel__arr" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="connect__shoutout reveal" data-delay="3">
+              <p class="connect__shoutout-label">Also at USI</p>
+              <a class="channel channel--aside" href="https://chat.whatsapp.com/FQS7h8Q3d3uF8TX6wSkyKM" target="_blank" rel="noopener noreferrer" aria-label="Join Russian and Ukrainian language group on WhatsApp">
+                <span class="channel__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </span>
+                <div class="channel__info">
+                  <p class="channel__name">Russian &amp; Ukrainian Language Group</p>
+                  <p class="channel__handle">Independent student initiative · open to all at USI</p>
                 </div>
                 <span class="channel__arr" aria-hidden="true">→</span>
               </a>
@@ -650,7 +455,6 @@
           <nav class="footer__nav" aria-label="Footer navigation">
             <a class="footer__nav-link" href="#about">About</a>
             <a class="footer__nav-link" href="#latest">Latest</a>
-            <a class="footer__nav-link" href="#events">Programme</a>
             <a class="footer__nav-link" href="#team">Team</a>
             <a class="footer__nav-link" href="#connect">Contact</a>
           </nav>
@@ -660,7 +464,6 @@
           <nav class="footer__nav" aria-label="Social links">
             <a class="footer__nav-link" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
             <a class="footer__nav-link" href="https://instagram.com/rssa_lugano" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a class="footer__nav-link" href="https://chat.whatsapp.com/FQS7h8Q3d3uF8TX6wSkyKM" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             <a class="footer__nav-link" href="mailto:RSSA@usi.ch">Email</a>
           </nav>
         </div>

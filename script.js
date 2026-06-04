@@ -1,59 +1,12 @@
-// ── JUICER: fallback + sort controls ──────────────────────
+// ── JUICER: fallback ──────────────────────────────────────
 const juicerFeed     = document.querySelector('.juicer-feed');
 const juicerFallback = document.getElementById('latestFallback');
-const sortBtns       = document.querySelectorAll('.sort-btn');
 
-// Show fallback if feed ID not yet configured
 if (juicerFeed && juicerFallback) {
   const feedId = juicerFeed.getAttribute('data-feed-id');
   if (!feedId || feedId === 'YOUR-FEED-ID') {
     juicerFallback.classList.add('latest__fallback--visible');
   }
-}
-
-// Sort rendered Juicer items by date
-function sortFeed(order) {
-  const list = document.querySelector('.juicer-feed ul');
-  if (!list) return;
-  const items = [...list.querySelectorAll('li.feed-item')];
-  if (items.length < 2) return;
-
-  items.sort((a, b) => {
-    const getTime = el => {
-      const dateEl = el.querySelector('.j-date');
-      if (!dateEl) return 0;
-      const str = dateEl.getAttribute('title') || dateEl.getAttribute('datetime') || '';
-      return new Date(str).getTime() || 0;
-    };
-    return order === 'oldest' ? getTime(a) - getTime(b) : getTime(b) - getTime(a);
-  });
-
-  items.forEach(item => list.appendChild(item));
-}
-
-// Wire sort buttons
-sortBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    sortBtns.forEach(b => {
-      b.classList.remove('sort-btn--active');
-      b.setAttribute('aria-pressed', 'false');
-    });
-    btn.classList.add('sort-btn--active');
-    btn.setAttribute('aria-pressed', 'true');
-    sortFeed(btn.dataset.sort);
-  });
-});
-
-// Wait for Juicer to render, then enable sorting
-if (juicerFeed) {
-  const observer = new MutationObserver(() => {
-    const list = juicerFeed.querySelector('ul');
-    if (list && list.querySelectorAll('li.feed-item').length > 0) {
-      observer.disconnect();
-      sortFeed('newest'); // default order
-    }
-  });
-  observer.observe(juicerFeed, { childList: true, subtree: true });
 }
 
 // ── NAV: scroll state ──────────────────────────────────────
@@ -63,8 +16,8 @@ window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 // ── NAV: mobile drawer ────────────────────────────────────
-const toggle     = document.getElementById('navToggle');
-const drawer     = document.getElementById('navDrawer');
+const toggle      = document.getElementById('navToggle');
+const drawer      = document.getElementById('navDrawer');
 const drawerLinks = drawer.querySelectorAll('a');
 
 toggle.addEventListener('click', () => {
@@ -83,7 +36,6 @@ drawerLinks.forEach(link => {
   });
 });
 
-// Close drawer on outside click (backdrop)
 document.addEventListener('click', (e) => {
   if (drawer.classList.contains('open') &&
       !drawer.contains(e.target) &&
@@ -108,7 +60,6 @@ const io = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => io.observe(el));
 
-// Trigger hero immediately (already in view)
 requestAnimationFrame(() => {
   document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('in'));
 });
@@ -127,7 +78,6 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  // If Formspree hasn't been configured, open mailto as fallback
   if (!FORM_WIRED) {
     const name    = form.firstName.value + ' ' + form.lastName.value;
     const message = form.message.value;
