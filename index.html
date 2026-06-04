@@ -41,6 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://assets.juicer.io/embed.css" media="all">
 
   <!-- ─── Structured data ─────────────────────────────────── -->
   <script type="application/ld+json">
@@ -205,6 +206,7 @@
           <a class="nav__link" href="#about">About</a>
           <a class="nav__link" href="#events">Events</a>
           <a class="nav__link" href="#team">Team</a>
+          <a class="nav__link" href="#latest">Latest</a>
           <a class="nav__link" href="#connect">Contact</a>
           <a class="nav__join" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Join Us</a>
         </nav>
@@ -217,6 +219,7 @@
       <a class="nav__drawer-link" href="#about">About</a>
       <a class="nav__drawer-link" href="#events">Events</a>
       <a class="nav__drawer-link" href="#team">Team</a>
+      <a class="nav__drawer-link" href="#latest">Latest</a>
       <a class="nav__drawer-link" href="#connect">Contact</a>
       <a class="nav__drawer-link" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Join Us →</a>
     </nav>
@@ -486,11 +489,46 @@
       </div>
     </section>
 
+    <!-- ─── LATEST ───────────────────────────────────────────── -->
+    <section class="latest section-pad" id="latest" aria-labelledby="latest-hed">
+      <div class="container">
+        <header class="sec-hd reveal">
+          <span class="sec-num">04</span>
+          <h2 class="sec-title" id="latest-hed">Latest</h2>
+          <div class="latest__sources" aria-label="Social channels">
+            <a class="latest__source-link" href="https://www.instagram.com/rssa_lugano" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <span class="latest__source-sep" aria-hidden="true">·</span>
+            <a class="latest__source-link" href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
+          </div>
+        </header>
+
+        <!--
+          ── JUICER SETUP ────────────────────────────────────────────
+          1. Create a free account at juicer.io
+          2. Add source: Instagram  → connect @rssa_lugano
+          3. Add source: Telegram   → connect @RSSA_Lugano
+          4. Your feed name appears in the dashboard URL:
+             juicer.io/feeds/YOUR-FEED-ID/edit
+          5. Replace YOUR-FEED-ID below with that name, then commit.
+          ────────────────────────────────────────────────────────────
+        -->
+        <div class="juicer-feed" data-feed-id="YOUR-FEED-ID" data-per="9" data-truncate="120" data-overlay="false"></div>
+
+        <p class="latest__fallback" id="latestFallback">
+          Follow us on
+          <a href="https://www.instagram.com/rssa_lugano" target="_blank" rel="noopener noreferrer">Instagram</a>
+          and
+          <a href="https://t.me/RSSA_Lugano" target="_blank" rel="noopener noreferrer">Telegram</a>
+          for the latest updates.
+        </p>
+      </div>
+    </section>
+
     <!-- ─── CONNECT ───────────────────────────────────────────── -->
     <section class="connect section-pad" id="connect" aria-labelledby="connect-hed">
       <div class="container">
         <header class="sec-hd reveal">
-          <span class="sec-num">04</span>
+          <span class="sec-num">05</span>
           <h2 class="sec-title" id="connect-hed">Join the community</h2>
         </header>
         <div class="connect__layout">
@@ -597,6 +635,7 @@
             <a class="footer__nav-link" href="#about">About</a>
             <a class="footer__nav-link" href="#events">Events</a>
             <a class="footer__nav-link" href="#team">Team</a>
+            <a class="footer__nav-link" href="#latest">Latest</a>
             <a class="footer__nav-link" href="#connect">Contact</a>
           </nav>
         </div>
@@ -619,5 +658,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://assets.juicer.io/embed.js" async></script>
 </body>
 </html>

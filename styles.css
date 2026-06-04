@@ -722,6 +722,82 @@ address { font-style: normal; }
   .team__grid { grid-template-columns: 1fr; }
 }
 
+/* ─── LATEST ─────────────────────────────────────────────── */
+.latest { background: var(--c-bg-muted); }
+.latest .sec-hd { border-color: var(--c-border); }
+
+.latest__sources {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.latest__source-link {
+  font-family: var(--f-display);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  transition: color var(--t-fast) var(--ease-out);
+}
+.latest__source-link:hover { color: var(--c-accent); }
+.latest__source-sep {
+  color: var(--c-border-2);
+  font-size: var(--t-xs);
+}
+
+/* Fallback text shown until Juicer loads / is configured */
+.latest__fallback {
+  font-family: var(--f-display);
+  font-size: var(--t-sm);
+  color: var(--c-text-3);
+  text-align: center;
+  padding-block: var(--sp-8);
+  display: none; /* hidden by default; shown via JS if feed ID not set */
+}
+.latest__fallback a {
+  color: var(--c-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.latest__fallback--visible { display: block; }
+
+/* ─── JUICER OVERRIDES ────────────────────────────────────── */
+/* Bring the widget into the design language as much as the
+   free tier allows — no rounded cards, match the colour palette */
+.j-poster,
+.juicer-feed .j-poster {
+  border: 1px solid var(--c-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: var(--c-surface) !important;
+  transition: border-color var(--t-fast) !important;
+}
+.j-poster:hover,
+.juicer-feed .j-poster:hover {
+  border-color: var(--c-border-2) !important;
+  box-shadow: none !important;
+}
+.juicer-feed .j-text,
+.juicer-feed .j-date {
+  font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif !important;
+}
+.juicer-feed .j-paginate {
+  font-family: 'Bricolage Grotesque', 'Helvetica Neue', Helvetica, sans-serif !important;
+  background: var(--c-text) !important;
+  color: var(--c-bg) !important;
+  border-radius: 0 !important;
+  border: none !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  padding: 12px 24px !important;
+  transition: background-color var(--t-fast) !important;
+}
+.juicer-feed .j-paginate:hover {
+  background: var(--c-accent) !important;
+}
+
 /* ─── CONNECT ─────────────────────────────────────────────── */
 .connect { background: var(--c-accent-lt); }
 .connect .sec-hd { border-color: color-mix(in oklch, var(--c-accent) 20%, transparent); }

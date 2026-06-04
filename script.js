@@ -1,3 +1,13 @@
+// ── JUICER: show fallback if feed not yet configured ──────
+const juicerFeed = document.querySelector('.juicer-feed');
+const juicerFallback = document.getElementById('latestFallback');
+if (juicerFeed && juicerFallback) {
+  const feedId = juicerFeed.getAttribute('data-feed-id');
+  if (!feedId || feedId === 'YOUR-FEED-ID') {
+    juicerFallback.classList.add('latest__fallback--visible');
+  }
+}
+
 // ── NAV: scroll state ──────────────────────────────────────
 const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 48);
