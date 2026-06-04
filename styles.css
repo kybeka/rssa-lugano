@@ -47,6 +47,11 @@
   --c-dark-border: oklch(22%   0.008 265);
   --c-dark-text:   oklch(65%   0.010 265);
 
+  /* Blue — from logo cobalt */
+  --c-blue:        oklch(40%   0.200 260);
+  --c-blue-lt:     oklch(94%   0.040 260);
+  --c-blue-dk:     oklch(24%   0.140 260);
+
   /* Derived */
   --c-bg-ghost:    oklch(93%   0.006 85);
   --c-accent-dark: oklch(40%   0.165 28);
@@ -105,7 +110,7 @@ address { font-style: normal; }
   font-size: var(--t-md);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--c-text);
+  color: var(--c-blue);
 }
 .nav__logo-sub {
   font-size: var(--t-2xs);
@@ -565,20 +570,21 @@ address { font-style: normal; }
 
 
 /* ─── TEAM ────────────────────────────────────────────────── */
+.team { background: var(--c-blue-lt); }
 .team__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: var(--c-border);
+  background: color-mix(in oklch, var(--c-blue) 18%, transparent);
 }
 .team-card {
   display: flex;
   flex-direction: column;
-  background: var(--c-bg);
+  background: var(--c-blue-lt);
   overflow: hidden;
   transition: background-color var(--t-fast);
 }
-.team-card:hover { background: var(--c-accent-lt); }
+.team-card:hover { background: oklch(90% 0.06 260); }
 .team-card__photo {
   aspect-ratio: 4 / 5;
   background: var(--c-bg-muted);
@@ -844,7 +850,7 @@ textarea.form-field { resize: vertical; min-height: 130px; }
 
 /* ─── FOOTER ──────────────────────────────────────────────── */
 .footer {
-  background: var(--c-text);
+  background: var(--c-blue-dk);
   padding-block: var(--sp-9) var(--sp-7);
 }
 .footer__grid {
