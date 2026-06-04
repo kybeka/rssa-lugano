@@ -264,6 +264,7 @@ address { font-style: normal; }
 .hero__headline strong {
   font-weight: 700;
   font-style: italic;
+  color: var(--c-accent);
 }
 
 .hero__footer {
@@ -497,7 +498,7 @@ address { font-style: normal; }
   font-size: var(--t-sm);
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--c-text);
+  color: var(--c-accent);
   margin-block-end: var(--sp-2);
 }
 .about__pillar-body {
@@ -565,20 +566,21 @@ address { font-style: normal; }
 
 
 /* ─── TEAM ────────────────────────────────────────────────── */
+.team { background: var(--c-accent-lt); }
 .team__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: var(--c-border);
+  background: color-mix(in oklch, var(--c-accent) 18%, transparent);
 }
 .team-card {
   display: flex;
   flex-direction: column;
-  background: var(--c-bg);
+  background: var(--c-accent-lt);
   overflow: hidden;
   transition: background-color var(--t-fast);
 }
-.team-card:hover { background: var(--c-accent-lt); }
+.team-card:hover { background: oklch(88% 0.045 28); }
 .team-card__photo {
   aspect-ratio: 4 / 5;
   background: var(--c-bg-muted);
