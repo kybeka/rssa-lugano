@@ -17,15 +17,15 @@ umask 077
 mkdir -p "$backup_base"
 run_dir="$(mktemp -d "$backup_base/$(date +%Y%m%d-%H%M%S)-XXXXXX")"
 mkdir "$run_dir/source"
-cp -R "$wp_dir/theme" "$run_dir/source/theme"
-cp "$wp_dir/plugins/rssa-telegram/rssa-telegram.php" "$run_dir/source/rssa-telegram.php"
-
-node - "$run_dir" <<'NODE'
+node - "$run_dir" "$wp_dir" <<'NODE'
 const fs = require('node:fs');
 const path = require('node:path');
 const {execFileSync} = require('node:child_process');
 const run = process.argv[2];
 const source = path.join(run, 'source');
+const wpDir = process.argv[3];
+const revision = process.env.RSSA_RELEASE_COMMIT || '';
+if (revision && !/^[a-f0-9]{40}$/.test(revision)) throw new Error('Invalid release commit');
 const themeRoot = '/usi_rssa/docs/wp-content/themes/rssa';
 const pluginRoot = '/usi_rssa/docs/wp-content/plugins/rssa-telegram';
 // Explicit allowlist: no runtime, accounts, database, uploads or importers.
@@ -35,6 +35,14 @@ const themeFiles = ['functions.php','gallery.php','index.php','contact.php','con
 const files = themeFiles.map(name => [path.join(source, 'theme', name), `${themeRoot}/${name}`]);
 files.push([path.join(source,'rssa-telegram.php'), `${pluginRoot}/rssa-telegram.php`]);
 for (const [local] of files) {
+  const relative = path.relative(source, local);
+  const sourcePath = relative === 'rssa-telegram.php' ? 'plugins/rssa-telegram/rssa-telegram.php' : relative;
+  fs.mkdirSync(path.dirname(local), {recursive:true});
+  if (revision) {
+    fs.writeFileSync(local, execFileSync('git', ['show', revision + ':wordpress/' + sourcePath], {cwd:wpDir, maxBuffer:20*1024*1024}));
+  } else {
+    fs.copyFileSync(path.join(wpDir,sourcePath),local);
+  }
   if (!fs.statSync(local).isFile()) throw new Error(`Missing deployment file: ${local}`);
   if (local.endsWith('.php')) execFileSync('php', ['-l', local]);
   if (local.endsWith('.js')) execFileSync('node', ['--check', local]);
@@ -58,7 +66,8 @@ batch.push('bye');
 fs.writeFileSync(path.join(run,'repair.sftp'), files.map(([,remote]) => `chmod 644 ${quote(remote)}`).concat('bye').join('\n')+'\n');
 fs.writeFileSync(path.join(run,'upload.sftp'),batch.join('\n')+'\n');
 fs.writeFileSync(path.join(run,'manifest.json'),JSON.stringify(files.map(([local,remote])=>({remote,sha256:require('node:crypto').createHash('sha256').update(fs.readFileSync(local)).digest('hex')})),null,2));
-console.log(`Validated ${files.length} code and bundled image files.`);
+if (revision) fs.writeFileSync(path.join(run,'commit.txt'),revision+'\n');
+console.log(`Validated ${files.length} code and bundled image files.${revision ? ' Source commit: ' + revision : ''}`);
 NODE
 
 echo "Deployment snapshot and backup location: $run_dir"

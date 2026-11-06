@@ -3,10 +3,22 @@
 Run in a normal Terminal shell, not at the `sftp>` prompt:
 
 ```sh
-bash /Users/kylakaplan/Desktop/rssa+/rssa/wordpress/deployment/publish.sh --publish
+bash /Users/kylakaplan/Desktop/rssa+/rssa/wordpress/deployment/release.sh
 ```
 
-Enter your USI password at the SFTP prompt. It is not saved. VPN may be required by USI. To validate without connecting, replace `--publish` with `--preview`.
+This command validates tracked WordPress source, commits any changes with a conventional message, pushes to GitHub, verifies the remote commit, then uploads that exact committed source to USI. With no changes, it reuses the existing commit. Enter your USI password at the SFTP prompt; it is not saved. VPN may be required by USI.
+
+Optionally add a descriptive commit message:
+
+```sh
+bash /Users/kylakaplan/Desktop/rssa+/rssa/wordpress/deployment/release.sh "fix(gallery): adjust photo spacing"
+```
+
+Run on main. Existing staged changes, unreviewed new WordPress files, a changed GitHub destination, or remote changes missing locally stop the release. Only tracked WordPress files are automatically committed; unrelated uncommitted work stays local. Review and commit new source files separately before the first release that includes them. New deployed files also need to be added to the upload allowlist.
+
+A failed GitHub push stops before SFTP. If SFTP fails afterward, the GitHub backup remains available; the script reports the failure rather than claiming a successful release. Correct the error and rerun. Do not run concurrent releases. If a killed process leaves the release lock, confirm no release is running before removing .git/rssa-release.lock.
+
+For local validation without committing, pushing or connecting, run `bash wordpress/deployment/publish.sh --preview` from the repository root. The lower-level `publish.sh --publish` remains available for a code-only upload; the combined release command is the normal workflow.
 
 The script validates PHP and JavaScript, freezes a local source snapshot, downloads the existing theme and Telegram plugin, stages the allowlisted files, then renames them into place. Each replacement is atomic, but the complete release is not. If an upload or backup fails, the batch stops; if a rename fails, some files may already have been replaced. Keep the terminal output and backup location for recovery. Do not run two deployments simultaneously.
 
