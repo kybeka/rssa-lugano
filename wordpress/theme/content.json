@@ -1,0 +1,307 @@
+{
+  "text_1": {
+    "label": "Association name",
+    "section": "hero",
+    "type": "text",
+    "default": "Russian Speaking Student Association · USI Lugano"
+  },
+  "text_2": {
+    "label": "Main headline",
+    "section": "hero",
+    "type": "text",
+    "default": "Language<br>is a<br><strong>bridge.</strong>"
+  },
+  "text_3": {
+    "label": "Introduction",
+    "section": "hero",
+    "type": "text",
+    "default": "A welcoming, non-political community for Russian-speaking students at the Università della Svizzera italiana — open to all who share our love of language, culture, and connection."
+  },
+  "text_4": {
+    "label": "Location",
+    "section": "hero",
+    "type": "text",
+    "default": "Università della Svizzera italiana<br> Lugano, Switzerland"
+  },
+  "text_5": {
+    "label": "About heading",
+    "section": "about",
+    "type": "text",
+    "default": "Who we are"
+  },
+  "text_6": {
+    "label": "About introduction",
+    "section": "about",
+    "type": "text",
+    "default": "The Russian Speaking Student Association brings together students who share a language and a curiosity for culture — at one of Europe's most international universities."
+  },
+  "text_7": {
+    "label": "About description",
+    "section": "about",
+    "type": "text",
+    "default": "Located in Lugano — where Italy, Switzerland, and the world converge — RSSA creates a space to connect, celebrate culture, and build lasting friendships. We are open to every member of the USI community: language is a meeting place, not a dividing line."
+  },
+  "text_8": {
+    "label": "First value title",
+    "section": "about",
+    "type": "text",
+    "default": "Community-driven"
+  },
+  "text_9": {
+    "label": "First value description",
+    "section": "about",
+    "type": "text",
+    "default": "Every event is planned by students, for students."
+  },
+  "text_10": {
+    "label": "Second value title",
+    "section": "about",
+    "type": "text",
+    "default": "Non-profit"
+  },
+  "text_11": {
+    "label": "Second value description",
+    "section": "about",
+    "type": "text",
+    "default": "Run entirely on goodwill and student energy."
+  },
+  "text_12": {
+    "label": "Third value title",
+    "section": "about",
+    "type": "text",
+    "default": "Open to all"
+  },
+  "text_13": {
+    "label": "Third value description",
+    "section": "about",
+    "type": "text",
+    "default": "Any USI student is welcome, regardless of background."
+  },
+  "founder_quote": {
+    "section": "about",
+    "type": "text",
+    "label": "Founder quote",
+    "default": "\"I founded RSSA because I wanted a place where being Russian-speaking felt like a connection, not an explanation.\""
+  },
+  "text_14": {
+    "label": "Manifesto quote",
+    "section": "manifesto",
+    "type": "text",
+    "default": "\"Language and culture<br>are not threats,<br>but <em>bridges</em>.\""
+  },
+  "text_15": {
+    "label": "Manifesto description",
+    "section": "manifesto",
+    "type": "text",
+    "default": "In Lugano — at the intersection of Swiss precision and Mediterranean warmth — we choose connection over division, and curiosity over isolation."
+  },
+  "text_16": {
+    "label": "Events heading",
+    "section": "latest",
+    "type": "text",
+    "default": "Latest updates"
+  },
+  "text_17": {
+    "label": "Team heading",
+    "section": "team",
+    "type": "text",
+    "default": "The team"
+  },
+  "text_18": {
+    "label": "President role",
+    "section": "team",
+    "type": "text",
+    "default": "President · Founder"
+  },
+  "text_19": {
+    "label": "President name",
+    "section": "team",
+    "type": "text",
+    "default": "Katherine<br>Lerner-Teves"
+  },
+  "text_20": {
+    "label": "President biography",
+    "section": "team",
+    "type": "text",
+    "default": "Completed an undergraduate degree in Finance at Bentley University and is currently pursuing a Master's degree in Finance at USI."
+  },
+  "text_21": {
+    "label": "Vice president role",
+    "section": "team",
+    "type": "text",
+    "default": "Vice President"
+  },
+  "text_22": {
+    "label": "Vice president name",
+    "section": "team",
+    "type": "text",
+    "default": "David<br>Bocherov"
+  },
+  "text_23": {
+    "label": "Vice president biography",
+    "section": "team",
+    "type": "text",
+    "default": "Currently studying for a Master's degree in Media Management at USI. Drama actor and cinema enthusiast."
+  },
+  "text_24": {
+    "label": "Treasurer role",
+    "section": "team",
+    "type": "text",
+    "default": "Treasurer"
+  },
+  "text_25": {
+    "label": "Treasurer name",
+    "section": "team",
+    "type": "text",
+    "default": "Aleksandr<br>Volkov"
+  },
+  "text_26": {
+    "label": "Treasurer biography",
+    "section": "team",
+    "type": "text",
+    "default": "About to complete his Master's degree in Fintech at USI."
+  },
+  "text_27": {
+    "label": "Contact heading",
+    "section": "connect",
+    "type": "text",
+    "default": "Join the community"
+  },
+  "text_28": {
+    "label": "Contact introduction heading",
+    "section": "connect",
+    "type": "text",
+    "default": "Find us where<br>you already are."
+  },
+  "text_29": {
+    "label": "Contact description",
+    "section": "connect",
+    "type": "text",
+    "default": "The quickest way to stay in the loop is our Telegram channel — every event is announced there first. Follow us on Instagram for highlights, or send us a message directly."
+  },
+  "text_30": {
+    "label": "Telegram label",
+    "section": "connect",
+    "type": "text",
+    "default": "Telegram"
+  },
+  "text_31": {
+    "label": "Telegram handle",
+    "section": "connect",
+    "type": "text",
+    "default": "@RSSA_Lugano"
+  },
+  "text_32": {
+    "label": "Instagram label",
+    "section": "connect",
+    "type": "text",
+    "default": "Instagram"
+  },
+  "text_33": {
+    "label": "Instagram handle",
+    "section": "connect",
+    "type": "text",
+    "default": "@rssa_lugano"
+  },
+  "text_34": {
+    "label": "Email label",
+    "section": "connect",
+    "type": "text",
+    "default": "Email"
+  },
+  "text_35": {
+    "label": "Email address label",
+    "section": "connect",
+    "type": "text",
+    "default": "RSSA@usi.ch"
+  },
+  "text_36": {
+    "label": "Related initiative heading",
+    "section": "connect",
+    "type": "text",
+    "default": "Also at USI"
+  },
+  "text_37": {
+    "label": "Related initiative name",
+    "section": "connect",
+    "type": "text",
+    "default": "Russian &amp; Ukrainian Language Group"
+  },
+  "text_38": {
+    "label": "Related initiative description",
+    "section": "connect",
+    "type": "text",
+    "default": "Independent student initiative · open to all at USI"
+  },
+  "text_39": {
+    "label": "Footer name",
+    "section": "Footer",
+    "type": "text",
+    "default": "RSSA"
+  },
+  "text_40": {
+    "label": "Footer description",
+    "section": "Footer",
+    "type": "text",
+    "default": "Russian Speaking Student Association at the Università della Svizzera italiana, Lugano. A community open to all USI students."
+  },
+  "text_41": {
+    "label": "University disclaimer",
+    "section": "Footer",
+    "type": "text",
+    "default": "This website is managed by a student association. The Università della Svizzera italiana (USI) assumes no responsibility for the content, opinions, or activities presented on this website."
+  },
+  "text_42": {
+    "label": "Navigation heading",
+    "section": "Footer",
+    "type": "text",
+    "default": "Navigate"
+  },
+  "text_43": {
+    "label": "Social links heading",
+    "section": "Footer",
+    "type": "text",
+    "default": "Connect"
+  },
+  "text_44": {
+    "label": "Copyright",
+    "section": "Footer",
+    "type": "text",
+    "default": "© 2026 RSSA Lugano"
+  },
+  "image_1": {
+    "label": "RSSA Lugano",
+    "section": "Photos",
+    "type": "image",
+    "default": "images/logo.png",
+    "alt": "RSSA Lugano"
+  },
+  "image_2": {
+    "label": "RSSA members at a community event in Lugano",
+    "section": "Photos",
+    "type": "image",
+    "default": "images/group-photo.avif",
+    "alt": "RSSA members at a community event in Lugano"
+  },
+  "image_3": {
+    "label": "Katherine Lerner-Teves, President and Founder of RSSA Lugano",
+    "section": "Photos",
+    "type": "image",
+    "default": "images/katherine.avif",
+    "alt": "Katherine Lerner-Teves, President and Founder of RSSA Lugano"
+  },
+  "image_4": {
+    "label": "David Bocherov, Vice President of RSSA Lugano",
+    "section": "Photos",
+    "type": "image",
+    "default": "images/david.avif",
+    "alt": "David Bocherov, Vice President of RSSA Lugano"
+  },
+  "image_5": {
+    "label": "Aleksandr Volkov, Treasurer of RSSA Lugano",
+    "section": "Photos",
+    "type": "image",
+    "default": "images/aleksandr.avif",
+    "alt": "Aleksandr Volkov, Treasurer of RSSA Lugano"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "7.1.3"
+  },
+  "plugins": [
+    "sqlite-database-integration"
+  ],
+  "steps": [
+    {
+      "step": "activateTheme",
+      "themeFolderName": "rssa"
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "RSSA Lugano — Local development",
+        "blog_public": "0"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; if (!file_exists(WP_CONTENT_DIR . '/db.php')) { copy(WP_PLUGIN_DIR . '/sqlite-database-integration/db.copy', WP_CONTENT_DIR . '/db.php'); } if (!username_exists('katya-preview')) { wp_insert_user(['user_login'=>'katya-preview','user_pass'=>'rssa-local-preview','user_email'=>'katya@example.invalid','display_name'=>'Katya — local preview','role'=>'rssa_editor']); }"
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "rssa-telegram/rssa-telegram.php"
+    }
+  ]
+}

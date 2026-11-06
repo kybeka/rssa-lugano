@@ -1,0 +1,18 @@
+node_modules/
+runtime/
+*.log
+.local-credentials
+
+graphify-out/
+
+release/
+
+# Production credentials and data must remain outside source control.
+wp-config.php
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.db
+.env*
+!.env.example

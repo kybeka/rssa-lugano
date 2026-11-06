@@ -1,0 +1,21 @@
+<?php
+require __DIR__.'/integration.php';
+$path=get_attached_file($id);
+wp_set_current_user(0);
+verify(is_wp_error(rssat_delete_group('post-5')), 'Anonymous deletion permitted');
+wp_set_current_user(1);
+$result=rssat_delete_group('post-5');
+verify(!is_wp_error($result),'Deletion failed');
+verify(!get_post($id)&&!file_exists($path),'Photo not deleted');
+verify((string)$wpdb->get_var("SELECT body FROM ".rssat_table()." WHERE message_id=5")==='', 'Text not cleared');
+verify(deliver(5,80,['photo'=>[['file_id'=>'example-photo']]])['deleted'], 'Edit restored deleted post');
+verify(!is_wp_error(rssat_delete_group('album-123')),'Album deletion failed');
+verify(deliver(99,90,['media_group_id'=>'123'])['deleted'],'New album member restored deleted album');
+verify(!is_wp_error(rssat_delete_group('post-5')),'Repeat delete failed');
+deliver(7,100,['photo'=>[['file_id'=>'shared-photo']]]);
+$shared=$wpdb->get_var('SELECT attachment_id FROM '.rssat_table().' WHERE message_id=7');
+update_option('rssa_gallery',[['id'=>(int)$shared,'caption'=>'Test']]);
+verify(!is_wp_error(rssat_delete_group('post-7')),'Shared photo delete failed');
+verify(get_post($shared)&&file_exists(get_attached_file($shared)),'Gallery photo deleted');
+ob_start();rssat_render();$html=ob_get_clean();verify(!str_contains($html,'RSSA_Lugano/5'),'Deleted post rendered');
+echo "Passed: deletion permissions, text removal, original photo removal, repeat deletion, album deletion, suppression of edited posts and later album parts, preservation of gallery media.\n";
