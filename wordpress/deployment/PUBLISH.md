@@ -41,3 +41,15 @@ bash /Users/kylakaplan/Desktop/rssa+/rssa/wordpress/deployment/publish.sh --repa
 ```
 
 This changes only the 18 allowlisted deployed files, not directories, wp-config.php, credentials, or uploads.
+
+## One-time unused software cleanup
+
+The live dashboard inventory on 2026-11-06 showed Akismet and Hello Dolly inactive, and Twenty Twenty-Four / Twenty Twenty-Three unused. RSSA is active; Twenty Twenty-Five stays as the default fallback. Run this only while that inventory still applies:
+
+```sh
+bash wordpress/deployment/cleanup-unused.sh --archive
+```
+
+The script moves only those four items to a unique folder under `/usi_rssa/docs-archive/`, outside the public document root. It does not delete files. It saves the archive path and reverse SFTP commands in the local private deployment backup folder. If any move fails, inspect which moves completed before using the recovery commands. Refresh Site Health afterward.
+
+Automatic updates are a separate issue: the live background-update test reports FTP credentials are required due to file ownership. The RSSA release script does not update WordPress core or its fallback theme. Coordinate a supported update method with USI; do not solve this by making the whole website writable or storing a university password in WordPress. The missing optional Imagick extension and Authorization-header forwarding are also hosting configuration items. The measured 87 ms homepage response did not establish a speed problem; caching is not needed merely to clear this advisory.
